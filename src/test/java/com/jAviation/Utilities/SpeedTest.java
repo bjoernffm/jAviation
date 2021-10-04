@@ -1,5 +1,6 @@
 package com.jAviation.Utilities;
 
+import com.jAviation.Utilities.Embedded.Speed;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

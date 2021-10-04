@@ -1,11 +1,18 @@
 package com.jAviation.Models;
 
 import com.jAviation.Utilities.GeoCalculator;
-import com.jAviation.Utilities.Vector;
+import com.jAviation.Utilities.Embedded.Vector;
 
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class GeoPoint {
     protected double lat;
     protected double lon;
+
+    public GeoPoint() {
+
+    }
 
     public GeoPoint(double lat, double lon) {
         this.lat = lat;
@@ -16,8 +23,16 @@ public class GeoPoint {
         return lat;
     }
 
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
     public double getLon() {
         return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
     }
 
     @Override

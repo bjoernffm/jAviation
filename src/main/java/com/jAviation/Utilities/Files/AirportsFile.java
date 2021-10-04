@@ -3,7 +3,7 @@ package com.jAviation.Utilities.Files;
 import com.jAviation.Collections.AirportCollection;
 import com.jAviation.Models.Airports.Airport;
 import com.jAviation.Models.Airports.Runway;
-import com.jAviation.Utilities.Length;
+import com.jAviation.Utilities.Embedded.Length;
 
 import java.io.IOException;
 
@@ -39,7 +39,7 @@ public class AirportsFile extends File {
         var lat = Double.parseDouble(parts[3]);
         var lon = Double.parseDouble(parts[4]);
         var identifier = parts[1];
-        var countryCode = "EMPTY";
+        var countryCode = "";
         var name = parts[2];
         var elevation = Integer.parseInt(parts[5]);
 
@@ -50,7 +50,7 @@ public class AirportsFile extends File {
         var lat = Double.parseDouble(parts[8]);
         var lon = Double.parseDouble(parts[9]);
         var identifier = parts[1];
-        var countryCode = "EMPTY";
+        var countryCode = "";
         var name = "R"+parts[1];
         var elevation = Integer.parseInt(parts[10]);
         var length = new Length(Double.parseDouble(parts[3]), Length.Unit.FEET);

@@ -1,10 +1,17 @@
 package com.jAviation.Models.Navaids;
 
 import com.jAviation.Models.GroundStation;
-import com.jAviation.Utilities.Frequency;
+import com.jAviation.Utilities.Embedded.Frequency;
 
+import javax.persistence.*;
+
+@Entity
 public abstract class Navaid extends GroundStation {
     protected Frequency frequency;
+
+    public Navaid() {
+
+    }
 
     public Navaid(double lat, double lon, String identifier, String countryCode, String name, int elevation, Frequency frequency) {
         super(lat, lon, identifier, countryCode, name, elevation);

@@ -1,14 +1,31 @@
 package com.jAviation.Models.Airports;
 
 import com.jAviation.Models.GroundStation;
-import com.jAviation.Utilities.Length;
-import com.jAviation.Utilities.WindComponent;
-import com.jAviation.Utilities.WindVector;
+import com.jAviation.Utilities.Embedded.Length;
+import com.jAviation.Utilities.Embedded.WindComponent;
+import com.jAviation.Utilities.Embedded.WindVector;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
 public class Runway extends GroundStation {
+    @AttributeOverrides({
+        @AttributeOverride(name="value",column=@Column(name="length_in_m"))
+    })
     private Length length;
+    @AttributeOverrides({
+            @AttributeOverride(name="value",column=@Column(name="width_in_m"))
+    })
     private Length width;
+
     private int heading;
+
+    public Runway() {
+
+    }
 
     public Runway(double lat, double lon, String identifier, String countryCode, String name, int elevation, Length length, Length width, int heading) {
         super(lat, lon, identifier, countryCode, name, elevation);
@@ -21,12 +38,24 @@ public class Runway extends GroundStation {
         return length;
     }
 
+    public void setLength(Length length) {
+        this.length = length;
+    }
+
     public Length getWidth() {
         return width;
     }
 
+    public void setWidth(Length width) {
+        this.width = width;
+    }
+
     public int getHeading() {
         return heading;
+    }
+
+    public void setHeading(int heading) {
+        this.heading = heading;
     }
 
     public WindComponent getWindComponent(WindVector windVector) {

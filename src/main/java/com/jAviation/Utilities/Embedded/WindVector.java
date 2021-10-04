@@ -1,4 +1,6 @@
-package com.jAviation.Utilities;
+package com.jAviation.Utilities.Embedded;
+
+import com.jAviation.Utilities.Embedded.Speed;
 
 public class WindVector {
     private double direction;

@@ -1,6 +1,8 @@
 package com.jAviation.Utilities;
 
 import com.jAviation.Models.GeoPoint;
+import com.jAviation.Utilities.Embedded.Length;
+import com.jAviation.Utilities.Embedded.Vector;
 
 public class GeoCalculator {
     public static GeoPoint project(GeoPoint geoPoint, double magneticHeading, Length distance) {

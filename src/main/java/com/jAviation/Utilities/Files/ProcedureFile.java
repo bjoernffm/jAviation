@@ -1,12 +1,11 @@
 package com.jAviation.Utilities.Files;
 
 import com.jAviation.Collections.ProcedureCollection;
-import com.jAviation.Models.Airports.Airport;
 import com.jAviation.Models.Airports.Procedures.Procedure;
 import com.jAviation.Models.Airports.Procedures.Sid;
 import com.jAviation.Models.Waypoint;
 import com.jAviation.Utilities.GeoCalculator;
-import com.jAviation.Utilities.Length;
+import com.jAviation.Utilities.Embedded.Length;
 
 import java.io.IOException;
 

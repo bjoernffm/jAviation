@@ -1,5 +1,9 @@
-package com.jAviation.Utilities;
+package com.jAviation.Utilities.Embedded;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Frequency {
     public enum Unit {
         Hz(1),
@@ -14,7 +18,12 @@ public class Frequency {
     }
 
     // in Hz
+    @Column(name = "frequency_in_hz")
     private double value;
+
+    public Frequency() {
+
+    }
 
     public Frequency(double value, Frequency.Unit unit) {
         this.value = value * unit.factor;
@@ -22,6 +31,14 @@ public class Frequency {
 
     public double toUnit(Frequency.Unit unit) {
         return this.value / unit.factor;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
     }
 
     @Override

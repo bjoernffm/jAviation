@@ -1,8 +1,15 @@
 package com.jAviation.Models.Navaids;
 
-import com.jAviation.Utilities.Frequency;
+import com.jAviation.Utilities.Embedded.Frequency;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Ndb extends Navaid {
+    public Ndb() {
+
+    }
+
     public Ndb(double lat, double lon, String identifier, String countryCode, String name, int elevation, Frequency frequency) {
         super(lat, lon, identifier, countryCode, name, elevation, frequency);
     }

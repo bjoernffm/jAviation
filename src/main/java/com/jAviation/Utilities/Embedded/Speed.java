@@ -1,11 +1,10 @@
-package com.jAviation.Utilities;
+package com.jAviation.Utilities.Embedded;
 
-public class Length {
+public class Speed {
     public enum Unit {
-        METER(1),
-        KILOMETER(0.001),
-        NAUTICAL_MILE(0.000539957),
-        FEET(3.28084);
+        MPS(1),
+        KPH(3.6),
+        KTS(1.94384);
 
         private double factor;
 
@@ -14,10 +13,10 @@ public class Length {
         }
     }
 
-    // in meter
+    // in mps
     private double value;
 
-    public Length(double value, Unit unit) {
+    public Speed(double value, Unit unit) {
         this.value = value / unit.factor;
     }
 
@@ -27,8 +26,8 @@ public class Length {
 
     @Override
     public String toString() {
-        return "Length{" +
+        return "Speed{" +
                 "value=" + Math.round(value*10)/10. +
-                "m}";
+                "mps}";
     }
 }

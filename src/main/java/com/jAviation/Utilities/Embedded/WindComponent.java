@@ -1,4 +1,4 @@
-package com.jAviation.Utilities;
+package com.jAviation.Utilities.Embedded;
 
 public class WindComponent {
     private double heading;

@@ -1,5 +1,8 @@
 package com.jAviation.Utilities;
 
+import com.jAviation.Utilities.Embedded.Speed;
+import com.jAviation.Utilities.Embedded.WindComponent;
+import com.jAviation.Utilities.Embedded.WindVector;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

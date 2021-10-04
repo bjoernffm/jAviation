@@ -1,22 +1,20 @@
 package com.jAviation.Utilities.Files;
 
-import com.jAviation.Collections.AirportCollection;
-import com.jAviation.Collections.NavaidCollection;
-import com.jAviation.Models.Airports.Airport;
+import com.jAviation.Collections.WaypointCollection;
 import com.jAviation.Models.Navaids.*;
-import com.jAviation.Utilities.Frequency;
+import com.jAviation.Utilities.Embedded.Frequency;
 
 import java.io.IOException;
 
 public class NavaidsFile extends File {
-    private NavaidCollection navaids = new NavaidCollection();
+    private WaypointCollection navaids = new WaypointCollection();
 
     public NavaidsFile(String filename) throws IOException {
         super(filename);
         this.parse();
     }
 
-    public NavaidCollection getNavaids() {
+    public WaypointCollection getNavaids() {
         return navaids;
     }
 

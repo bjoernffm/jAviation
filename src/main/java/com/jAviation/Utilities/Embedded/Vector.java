@@ -1,4 +1,6 @@
-package com.jAviation.Utilities;
+package com.jAviation.Utilities.Embedded;
+
+import com.jAviation.Utilities.Embedded.Length;
 
 public class Vector {
     private double direction;

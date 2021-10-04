@@ -1,5 +1,6 @@
 src/main/resources/navdata
 .idea
+hibernate.cfg.xml
 
 # Maven (from: https://github.com/github/gitignore/blob/master/Maven.gitignore)
 target/
