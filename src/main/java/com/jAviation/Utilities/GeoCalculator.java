@@ -5,11 +5,11 @@ import com.jAviation.Utilities.Embedded.Length;
 import com.jAviation.Utilities.Embedded.Vector;
 
 public class GeoCalculator {
-    public static GeoPoint project(GeoPoint geoPoint, double magneticHeading, Length distance) {
+    public static GeoPoint project(GeoPoint geoPoint, Vector vector) {
         double lat = Math.toRadians(geoPoint.getLat());
         double lon = Math.toRadians(geoPoint.getLon());
-        double direction = Math.toRadians(magneticHeading);
-        double dist = Math.toRadians(distance.toUnit(Length.Unit.NAUTICAL_MILE))/60;
+        double direction = Math.toRadians(vector.getDirection());
+        double dist = Math.toRadians(vector.getLength().toUnit(Length.Unit.NAUTICAL_MILE))/60;
 
         double newLat = Math.asin(Math.sin(lat)*Math.cos(dist)+Math.cos(lat)*Math.sin(dist)*Math.cos(direction));
 

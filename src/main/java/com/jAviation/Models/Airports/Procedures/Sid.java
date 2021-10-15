@@ -18,9 +18,9 @@ public class Sid extends Procedure {
     public String toString() {
         var sb = new StringBuilder();
 
-        for(Waypoint wp: this.waypoints) {
+        /*for(Waypoint wp: this.waypoints) {
             sb.append(wp.getIdentifier()+" ");
-        }
+        }*/
         return "Sid{" +
                 "name='" + name + '\'' +
                 ", runway='" + runway + '\'' +

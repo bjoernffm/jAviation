@@ -99,6 +99,10 @@ public class GeoPoint {
         return ((Math.abs(this.lon) - this.getLonDegrees()) - (((int) this.getLonMinutes())/60.)) * 3600;
     }
 
+    public String toDecimal() {
+        return this.getLat() + "," + this.getLon();
+    }
+
     public String toDD() {
         // 27.00N 087.00W
         return "";

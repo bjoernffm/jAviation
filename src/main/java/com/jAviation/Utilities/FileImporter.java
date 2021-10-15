@@ -53,14 +53,14 @@ public class FileImporter {
     }
 
     private static void importNavaids(Session session) throws IOException {
-        importFile(new NavaidsFile("src\\main\\resources\\navdata\\Navaids.txt").getNavaids().subList(0, 300), "Importing navaids", session);
+        importFile(new NavaidsFile("src\\main\\resources\\navdata\\Navaids.txt").getNavaids(), "Importing navaids", session);
     }
 
     private static void importWaypoints(Session session) throws IOException {
-        importFile(new WaypointsFile("src\\main\\resources\\navdata\\Waypoints.txt").getWaypoints().subList(0, 300), "Importing waypoints", session);
+        importFile(new WaypointsFile("src\\main\\resources\\navdata\\Waypoints.txt").getWaypoints(), "Importing waypoints", session);
     }
 
     private static void importAirports(Session session) throws IOException {
-        importFile(new ArrayList(new AirportsFile("src\\main\\resources\\navdata\\Airports.txt").getAirports().values()).subList(8200, 8500), "Importing airports", session);
+        importFile(new ArrayList(new AirportsFile("src\\main\\resources\\navdata\\Airports.txt").getAirports().values()), "Importing airports", session);
     }
 }

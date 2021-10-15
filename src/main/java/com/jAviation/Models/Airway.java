@@ -1,11 +1,9 @@
 package com.jAviation.Models;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
-public class Airway {
+public class Airway extends LinkedList<Waypoint> {
     protected String name;
-    protected List<Waypoint> waypoints = new ArrayList<Waypoint>();
 
     public Airway(String name) {
         this.name = name;
@@ -13,14 +11,5 @@ public class Airway {
 
     public String getName() {
         return name;
-    }
-
-    public Waypoint addWaypoint(Waypoint waypoint) {
-        this.waypoints.add(waypoint);
-        return waypoint;
-    }
-
-    public List<Waypoint> getWaypoints() {
-        return waypoints;
     }
 }

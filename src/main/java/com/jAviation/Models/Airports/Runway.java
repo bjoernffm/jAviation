@@ -34,6 +34,17 @@ public class Runway extends GroundStation {
         this.heading = heading;
     }
 
+    public int getNumber() {
+        return Integer.parseInt(this.identifier.substring(0, 2));
+    }
+
+    public String getLetterSuffix() {
+        if(this.identifier.length() != 3) {
+            return "";
+        }
+        return this.identifier.substring(2, 3);
+    }
+
     public Length getLength() {
         return length;
     }

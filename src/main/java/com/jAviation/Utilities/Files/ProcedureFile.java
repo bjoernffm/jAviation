@@ -4,6 +4,7 @@ import com.jAviation.Collections.ProcedureCollection;
 import com.jAviation.Models.Airports.Procedures.Procedure;
 import com.jAviation.Models.Airports.Procedures.Sid;
 import com.jAviation.Models.Waypoint;
+import com.jAviation.Utilities.Embedded.Vector;
 import com.jAviation.Utilities.GeoCalculator;
 import com.jAviation.Utilities.Embedded.Length;
 
@@ -35,13 +36,13 @@ public class ProcedureFile extends File {
             } else if(parts[0].equals("CA")) {
                 // ignore
             } else if(parts[0].equals("CF")) {
-                procedure.addWaypoint(parseCourseToFixLine(parts));
+                procedure.add(parseCourseToFixLine(parts));
             } else if(parts[0].equals("DF")) {
-                procedure.addWaypoint(parseDirectToFixLine(parts));
+                procedure.add(parseDirectToFixLine(parts));
             } else if(parts[0].equals("TF")) {
-                procedure.addWaypoint(parseTrackBetweenFixLine(parts));
+                procedure.add(parseTrackBetweenFixLine(parts));
             } else if(parts[0].equals("CD")) {
-                procedure.addWaypoint(parseCourseToDmeLine(parts));
+                procedure.add(parseCourseToDmeLine(parts));
             } else if(line.isEmpty()) {
                 if (procedure != null) {
                     this.procedures.add(procedure);
@@ -81,7 +82,7 @@ public class ProcedureFile extends File {
         var distance = new Length(Double.parseDouble(parts[9]), Length.Unit.NAUTICAL_MILE);
 
         var list = navaidsFile.getNavaids().getByIdentifier(identifier, "ED");
-        var point = GeoCalculator.project(list.get(0), direction-3, distance);
+        var point = GeoCalculator.project(list.get(0), new Vector(direction-3, distance));
 
         return new Waypoint(point.getLat(), point.getLon(), "FIX", "");
     }
